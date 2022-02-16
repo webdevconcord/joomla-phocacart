@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="pcp" method="upgrade" version="4.0">
+    <name>plg_pcp_concordpay</name>
+    <author>MustPay (https://mustpay.tech)</author>
+    <creationDate>2022-01-25</creationDate>
+    <authorEmail>info@mustpay.tech</authorEmail>
+    <authorUrl>https://mustpay.tech</authorUrl>
+    <copyright>ConcordPay</copyright>
+    <license>GNU/GPL</license>
+    <version>1.0.0</version>
+    <description>PLG_PCP_CONCORDPAY_DESCRIPTION</description>
+    <projectName>PhocaCartConcordPayPlugin</projectName>
+
+    <files>
+        <filename plugin="concordpay">index.html</filename>
+        <filename plugin="concordpay">manifest.xml</filename>
+        <filename plugin="concordpay">concordpay.php</filename>
+        <filename plugin="concordpay">ConcordPayApi.php</filename>
+    </files>
+
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.plg_pcp_concordpay.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.plg_pcp_concordpay.sys.ini</language>
+        <language tag="ru-RU">language/ru-RU/ru-RU.plg_pcp_concordpay.ini</language>
+        <language tag="ru-RU">language/ru-RU/ru-RU.plg_pcp_concordpay.sys.ini</language>
+        <language tag="uk-UA">language/uk-UA/uk-UA.plg_pcp_concordpay.ini</language>
+        <language tag="uk-UA">language/uk-UA/uk-UA.plg_pcp_concordpay.sys.ini</language>
+    </languages>
+
+    <administration>
+        <languages>
+            <language tag="en-GB">language/en-GB/en-GB.plg_pcp_concordpay.ini</language>
+            <language tag="en-GB">language/en-GB/en-GB.plg_pcp_concordpay.sys.ini</language>
+            <language tag="ru-RU">language/ru-RU/ru-RU.plg_pcp_concordpay.ini</language>
+            <language tag="ru-RU">language/ru-RU/ru-RU.plg_pcp_concordpay.sys.ini</language>
+            <language tag="uk-UA">language/uk-UA/uk-UA.plg_pcp_concordpay.ini</language>
+            <language tag="uk-UA">language/uk-UA/uk-UA.plg_pcp_concordpay.sys.ini</language>
+        </languages>
+    </administration>
+    <form>
+        <fields name="params" addfieldpath="/administrator/components/com_phocacart/models/fields">
+            <fieldset name="payment" addpath="/administrator/components/com_phocacart/models/fields" group="pcp">
+
+                <field name="merchant_id"
+                       type="text"
+                       class="inputbox"
+                       size="40"
+                       label="PLG_PCP_CONCORDPAY_FIELD_MERCHANT_ID_LABEL"
+                       description="PLG_PCP_CONCORDPAY_FIELD_MERCHANT_ID_DESC"
+                       required="true"
+                />
+
+                <field name="secret_key"
+                       type="text"
+                       class="inputbox"
+                       size="40"
+                       label="PLG_PCP_CONCORDPAY_FIELD_SECRET_KEY_LABEL"
+                       description="PLG_PCP_CONCORDPAY_FIELD_SECRET_KEY_DESC"
+                       required="true"
+                />
+
+                <field name="language"
+                       type="list"
+                       label="PLG_PCP_CONCORDPAY_FIELD_LANGUAGE_LABEL"
+                       description="PLG_PCP_CONCORDPAY_FIELD_LANGUAGE_DESC"
+                       default="uk">
+                    <option value="uk">UA</option>
+                    <option value="ru">RU</option>
+                    <option value="en">EN</option>
+                </field>
+
+                <field name="status_approved"
+                       type="PhocaCartOrderStatus"
+                       default="2"
+                       label="PLG_PCP_CONCORDPAY_FIELD_STATUS_APPROVED_LABEL"
+                       description="PLG_PCP_CONCORDPAY_FIELD_STATUS_APPROVED_DESC"/>
+
+                <field name="status_declined"
+                       type="PhocaCartOrderStatus"
+                       default="3"
+                       label="PLG_PCP_CONCORDPAY_FIELD_STATUS_DECLINED_LABEL"
+                       description="PLG_PCP_CONCORDPAY_FIELD_STATUS_DECLINED_DESC"/>
+
+                <field name="status_canceled"
+                       type="PhocaCartOrderStatus"
+                       default="3"
+                       label="PLG_PCP_CONCORDPAY_FIELD_STATUS_CANCELED_LABEL"
+                       description="PLG_PCP_CONCORDPAY_FIELD_STATUS_CANCELED_DESC"/>
+
+                <field name="status_refunded"
+                       type="PhocaCartOrderStatus"
+                       default="5"
+                       label="PLG_PCP_CONCORDPAY_FIELD_STATUS_REFUNDED_LABEL"
+                       description="PLG_PCP_CONCORDPAY_FIELD_STATUS_REFUNDED_DESC"/>
+            </fieldset>
+        </fields>
+    </form>
+
+    <updateservers>
+        <server type="extension" name="PLG_PCP_CONCORDPAY" priority="1">
+            <![CDATA[https://raw.githubusercontent.com/webdevconcord/joomla-phocacart/master/manifest.xml]]></server>
+    </updateservers>
+</extension>
