@@ -9,11 +9,10 @@
     <license>GNU/GPL</license>
     <version>1.0.0</version>
     <description>PLG_PCP_CONCORDPAY_DESCRIPTION</description>
-    <projectName>PhocaCartConcordPayPlugin</projectName>
 
     <files>
         <filename plugin="concordpay">index.html</filename>
-        <filename plugin="concordpay">manifest.xml</filename>
+        <filename plugin="concordpay">update.xml</filename>
         <filename plugin="concordpay">concordpay.php</filename>
         <filename plugin="concordpay">ConcordPayApi.php</filename>
     </files>
@@ -27,19 +26,9 @@
         <language tag="uk-UA">language/uk-UA/uk-UA.plg_pcp_concordpay.sys.ini</language>
     </languages>
 
-    <administration>
-        <languages>
-            <language tag="en-GB">language/en-GB/en-GB.plg_pcp_concordpay.ini</language>
-            <language tag="en-GB">language/en-GB/en-GB.plg_pcp_concordpay.sys.ini</language>
-            <language tag="ru-RU">language/ru-RU/ru-RU.plg_pcp_concordpay.ini</language>
-            <language tag="ru-RU">language/ru-RU/ru-RU.plg_pcp_concordpay.sys.ini</language>
-            <language tag="uk-UA">language/uk-UA/uk-UA.plg_pcp_concordpay.ini</language>
-            <language tag="uk-UA">language/uk-UA/uk-UA.plg_pcp_concordpay.sys.ini</language>
-        </languages>
-    </administration>
     <form>
         <fields name="params" addfieldpath="/administrator/components/com_phocacart/models/fields">
-            <fieldset name="payment" addpath="/administrator/components/com_phocacart/models/fields" group="pcp">
+            <fieldset name="payment">
 
                 <field name="merchant_id"
                        type="text"
@@ -98,6 +87,6 @@
 
     <updateservers>
         <server type="extension" name="PLG_PCP_CONCORDPAY" priority="1">
-            <![CDATA[https://raw.githubusercontent.com/webdevconcord/joomla-phocacart/master/manifest.xml]]></server>
+            <![CDATA[https://raw.githubusercontent.com/webdevconcord/joomla-phocacart/master/update.xml]]></server>
     </updateservers>
 </extension>

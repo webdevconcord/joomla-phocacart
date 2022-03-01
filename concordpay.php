@@ -5,7 +5,7 @@
  * @category   Class
  * @package    Joomla
  * @extension  Phoca Extension
- * @subpackage BreezingCommerce
+ * @subpackage ConcordPay
  * @author     MustPay <info@mustpay.tech>
  * @copyright  2022 ConcordPay
  * @license    GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
@@ -162,8 +162,9 @@ class plgPCPConcordPay extends JPlugin
 		$data = [];
 		$data['merchant_id'] = $params->get('merchant_id', '');
 		$amount = $this->getAmount($order, $price, $paramsC);
-		$data['amount'] = $amount['cartBrutto'];
-		$data['order_id'] = $order['common']->order_number_id;
+
+		$data['amount']       = $amount['cartBrutto'];
+		$data['order_id']     = $order['common']->order_number_id;
 		$data['currency_iso'] = $order['common']->currency_code;
 
 		$data['client_first_name'] = $order['bas']['b']['name_first'] ?? '';
@@ -171,7 +172,7 @@ class plgPCPConcordPay extends JPlugin
 
 		$data['email'] = $order['bas']['b']['email'] ?? '';
 		$data['phone'] = $order['bas']['b']['phone'] ?? '';
-		$data['description'] = 'Оплата картой на сайте ' . htmlspecialchars($_SERVER['HTTP_HOST']) . ', '
+		$data['description'] = JText::_('PLG_PCP_CONCORDPAY_ORDER_DESC') . ' ' . htmlspecialchars($_SERVER['HTTP_HOST']) . ', '
 			. $data['client_first_name'] . ' ' . $data['client_last_name']
 			. ($data['phone'] ? (', ' . $data['phone'] . '.') : '.');
 
@@ -453,7 +454,7 @@ class plgPCPConcordPay extends JPlugin
 		// $cart->emptyCart();
 		// PhocacartUserGuestuser::cancelGuestUser();
 
-		$app = JFactory::getApplication();
+		$app = JFactory::getApplication() or die();
 		$response = $app->input->get->getArray();
 
 		if (isset($response['result']))
@@ -483,7 +484,7 @@ class plgPCPConcordPay extends JPlugin
 	 */
 	protected function callbackHandler($pid, $eventData)
 	{
-		$app = JFactory::getApplication();
+		$app = JFactory::getApplication() or die();
 		$response = $app->input->json->getArray();
 
 		$paymentTemp = new PhocacartPayment;

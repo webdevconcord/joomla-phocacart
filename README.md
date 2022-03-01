@@ -15,7 +15,7 @@ License URI: [License](https://opensource.org/licenses/GPL-3.0)
 1. В административной части сайта перейти в *«Система -> (Установка) Расширения -> Загрузить файл пакета»* и загрузить архив с модулем,
    который находится в папке `package`.
 
-2. Перейти в *«Система -> (Управление) Расширения»*, найти и включить плагин *«Phoca Cart Payment - ConcordPay Plugin»*.
+2. Перейти в *«Система -> (Управление) Расширения»*, найти и включить плагин *«Phoca Cart - ConcordPay Payment Gateway»*.
 
 3. Перейти в *«Компоненты -> Phoca Cart -> Payment»*, где добавить новый способ оплаты **«ConcordPay»**.
 
@@ -37,4 +37,4 @@ License URI: [License](https://opensource.org/licenses/GPL-3.0)
 
 Модуль готов к работе.
 
-*Модуль Joomla Phoca Cart протестирован для работы с Joomla 4.0.6, Phoca Cart 4.0.0 и PHP 7.4.*
+*Модуль Joomla Phoca Cart протестирован для работы с Joomla 4.1.0, Phoca Cart 4.0.0 и PHP 7.4.*

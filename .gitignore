@@ -1,0 +1,16 @@
+/*
+
+!.gitignore
+!concordpay.php
+!concordpay.png
+!concordpay.xml
+!ConcordPayApi.php
+!index.html
+!update.xml
+!README.md
+
+!/language/en-GB/*
+!/language/ru-RU/*
+!/language/uk-UA/*
+
+!/package/*
